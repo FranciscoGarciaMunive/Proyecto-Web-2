@@ -1,0 +1,157 @@
+.navegacion {
+    background-image:url('../img/header.png');
+    width: 100%;
+    background-size: contain;
+    color: white;
+    padding: 1rem;
+    background-position: 0px 0px;
+	background-repeat: repeat-x;
+	animation: animatedBackground 40s linear infinite;
+}
+
+.inicio-b{
+    height: 100%;
+    background-repeat: no-repeat;
+    background: url('../img/back.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+
+.pie {
+    background-image: url('../img/footer.png');
+    width: 100%;
+    background-color: white;
+    background-size: contain;
+    padding: 1rem;
+    background-repeat: repeat-x;
+	animation: animatedBackground 40s linear infinite;
+}
+
+@keyframes animatedBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+}
+
+header .nav a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.btn-gerente{
+    font-style: bold;
+    background: linear-gradient(132deg, #8f0831, #af093b, #c2194c, #dd2b61, #dd2b61);
+    background-size: 300% 300%;
+    animation: BackgroundGradient 30s ease infinite;
+}
+.btn-gerente:hover{
+    transform: scale(0.9);
+    transition: ease-in 100ms;
+    color: aliceblue;
+}
+.btn-hotel{
+    font-style: bold;
+    background: linear-gradient(132deg, #ed8017, #ed8017, #ec8e36, #e2b00c, #ffc400);
+    background-size: 300% 300%;
+    animation: BackgroundGradient 30s ease infinite;
+}
+.btn-hotel:hover{
+    transform: scale(0.9);
+    transition: ease-in 100ms;
+    color: aliceblue;
+}
+
+.btn-room{
+    font-style: bold;
+    background: linear-gradient(132deg, #049340, #049340, #2cd171, #43cf7e, #48dd86);
+    background-size: 300% 300%;
+    animation: BackgroundGradient 30s ease infinite;
+}
+.btn-room:hover{
+    transform: scale(0.9);
+    transition: ease-in 100ms;
+    color: aliceblue;
+}
+
+.btn-visit{
+    font-style: bold;
+    background: linear-gradient(132deg, #009488, #009488, #009d91, #17b4a7, #17b4a7);
+    background-size: 300% 300%;
+    animation: BackgroundGradient 30s ease infinite;
+}
+.btn-visit:hover{
+    transform: scale(0.9);
+    transition: ease-in 100ms;
+    color: aliceblue;
+}
+
+.btn-position{
+    position: center;
+}
+
+.cntr{
+    text-align:right;
+}
+.center {
+    margin: 0;
+    position: absolute;
+    left: 45%;
+}
+
+.white-letter{
+    color: white;
+}
+
+.button {
+
+    display: inline-block;
+    padding: 0.85em 1.5em;
+    font-size: 1 em;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #5D5D9B;
+    border: none;
+    border-radius: 0;
+}
+  
+.button:hover { 
+    background-color: #8484cf;
+} 
+
+.hotel-b{
+    height: 100%;
+    background-repeat: no-repeat;
+    background: url('../img/hotel.jpeg') no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+.gerente-b{
+    height: 100%;
+    background-repeat: no-repeat;
+    background: url('../img/gerente.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+.room-b{
+    height: 100%;
+    background-repeat: no-repeat;
+    background: url('../img/room.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+@keyframes BackgroundGradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  .hotel-pic{
+    margin-top: 40px;
+    height: 350px;
+}
+
+.btn-background{
+    background-color: #af093b;
+    border-color: #8f0831;
+}

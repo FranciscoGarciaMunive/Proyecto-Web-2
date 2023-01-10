@@ -1,0 +1,50 @@
+extends ./layout/index.pug 
+block compartircontenido
+    .p-4
+    center.h1 #{pagina}
+    .p-4
+    main.container.mt-5 
+        .row
+            .col-md-12
+                h2.d-block.w-100.text-center Agregar un nuevo gerente 
+                if (errores)
+                    each error in errores 
+                        .alert.col.alert-danger.text-center=error.mensaje
+            .row.justify-content-center.col 
+                .col-md-8
+                    form(action="/nuevoGerente" method="POST" class="was-validated")
+                        .form-group 
+                            label(for="id_grt") ID del gerente
+                            input#id_grt(type="text", placeholder="Identificador" name="id_grt", class="form-control", value=id_grt ,readonly="readonly")
+                        .form-group 
+                            label(for="nombre") Nombre 
+                            input#nombre(type="text", placeholder="Tu nombre" name="nombre", required minlength = "2"
+                            ,class="form-control", value=nombre)
+                            .invalid-feedback Este campo no puede quedar vacío
+                            .valid-feedback Valid.
+                        .form-group 
+                            label(for="ap_paterno") Primer apellido
+                            input#ap_paterno(type="text", placeholder="Tu apellido paterno" name="ap_paterno", required minlength = "2"
+                            ,class="form-control", value=ap_paterno)
+                            .invalid-feedback Este campo no puede quedar vacío
+                            .valid-feedback Valid.
+                        .form-group 
+                            label(for="ap_materno") Segundo apellido
+                            input#ap_materno(type="text", placeholder="Tu apellido materno" name="ap_materno", required minlength = "2"
+                            ,class="form-control", value=ap_materno)
+                            .invalid-feedback Este campo no puede quedar vacío
+                            .valid-feedback Valid.
+                        .form-group 
+                            label(for="telefono") Telefono
+                            input#correo(type="text", placeholder="Tu telefono" name="telefono", required minlength = "2"
+                            ,maxlength="12",onkeypress="return (event.charCode >= 48 && event.charCode <= 57)",class="form-control", value=telefono)
+                            .invalid-feedback Este campo no puede quedar vacío
+                            .valid-feedback Valid.
+                        .form(id="imagen", enctype="multipart/form-data") Imagen
+                            input#imagen(type="file", accept="image/*",multiple, value=imagen, name="imagen")
+                            .invalid-feedback Este campo no puede quedar vacío
+                            .valid-feedback Valid.
+                        
+                        
+                        center
+                            input.btn.btn-outline-success(type="submit")

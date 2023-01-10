@@ -1,0 +1,22 @@
+extends ./layout/index.pug
+block compartircontenido
+    
+    main.hotel-b
+        center.h1.white-letter #{pagina} 
+        .row.ml-5
+            each hotel in hoteles
+                .col-md.col-lg-4.mv-4 
+                    .card 
+                        img.card-img-top(src=`img/${hotel.imagen}.png`)
+                        .card-body 
+                            h2=hotel.nombre
+                            h2=hotel.direccion
+                            h2=hotel.correo
+                            h2=hotel.telefono
+                            
+                        a(href=`/cambiarHotel?id_htl=${hotel.id_htl}`,class=`btn btn-success btn-clock`) Editar
+                        
+                        a(href=`/eliminarHotel?id_htl=${hotel.id_htl}`,class=`btn btn-danger btn-clock`) Eliminar
+
+        center    
+            a.mb-5(href=`/guardarHotel`,class=`btn btn-success btn-clock`) Registrar nuevo hotel     

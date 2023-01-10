@@ -1,0 +1,18 @@
+extends ./layout/indexlogin.pug 
+block compartircontenido 
+    main.container.mt-5 
+        .row 
+            .col-md-5
+                img.hotel-pic(src = "/img/login-imagen.png")
+            .col-md-7
+                h2.d-block.w-100.text-center Credenciales
+                .row.justify-content-center.col 
+                    .col-md-8 
+                        form(action = "/credenciales" method="POST")
+                            .form-group 
+                                label(for="usuario") Usuario 
+                                input#usuario(type="test",placeholder="Ingresa tu usuario",name="usuario",class="form-control")
+                            .form-group 
+                                label(for="clave") Clave 
+                                input#clave(type="password",placeholder="Ingresa tu clave",name="clave",class="form-control")
+                            input.btn-background.btn.btn-success.btn-block(type="submit")    

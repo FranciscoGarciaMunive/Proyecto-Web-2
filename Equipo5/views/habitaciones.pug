@@ -1,0 +1,25 @@
+extends ./layout/index.pug
+block compartircontenido
+
+    main.room-b
+        center.h1.white-letter #{pagina} 
+    
+        .row.ml-5
+         
+            each habitacion in habitaciones
+                .col-md.col-lg-4.mv-4 
+                    .card 
+                        .card-body 
+                            h2=habitacion.piso
+                            h2=habitacion.nombre
+                            if h2=habitacion.refrigerador==true 
+                                h2="Sí tiene"
+                            else 
+                                h2="No tiene"
+                        a(href=`/cambiarHabitacion?id_hbt=${habitacion.id_hbt}`,class=`btn btn-success btn-clock`) Editar
+                        
+                        a(href=`/eliminarHabitacion?id_hbt=${habitacion.id_hbt}`,class=`btn btn-danger btn-clock`) Eliminar 
+    
+    
+        center 
+            a.mb-5(href=`/guardarHabitacion`,class=`btn btn-success btn-clock`) Registrar habitación

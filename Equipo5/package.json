@@ -1,0 +1,28 @@
+{
+  "name": "examen",
+  "version": "1.0.0",
+  "description": "Primera entrega de parcial del equipo 5",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "author": "Equipo 5",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
+    "i": "^0.3.7",
+    "mariadb": "^3.0.2",
+    "mysql2": "^2.3.3",
+    "nanoid": "^4.0.0",
+    "pug": "^3.0.2",
+    "require": "^2.4.20",
+    "sequelize": "^6.23.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

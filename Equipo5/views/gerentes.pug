@@ -1,0 +1,24 @@
+extends ./layout/index.pug
+block compartircontenido
+
+    main.gerente-b
+        center.h1.white-letter #{pagina} 
+    
+        .row.ml-5
+            each gerente in gerentes
+                .col-md.col-lg-4.mv-4 
+                    .card 
+                        img.card-img-top(src=`img/${gerente.imagen}.png`)
+                        .card-body 
+                            h2=gerente.nombre
+                            h2=gerente.ap_paterno
+                            h2=gerente.ap_materno
+                            h2=gerente.telefono
+
+                            
+                        a(href=`/cambiarGerente?id_grt=${gerente.id_grt}`,class=`btn btn-success btn-clock`) Editar
+                        
+                        a(href=`/eliminarGerente?id_grt=${gerente.id_grt}`,class=`btn btn-danger btn-clock`) Eliminar 
+    
+        center 
+            a.mb-5(href=`/guardarGerente`,class=`btn btn-success`) Registrar nuevo gerente

@@ -1,0 +1,57 @@
+extends ./layout/index.pug 
+block compartircontenido
+    .p-4
+    center.h1 #{pagina}
+    .p-4
+    main.container.mt-5 
+        .row
+            .col-md-12
+                h2.d-block.w-100.text-center Agregar un nuevo hotel 
+                if (errores)
+                    each error in errores 
+                        .alert.col.alert-danger.text-center=error.mensaje
+            .row.justify-content-center.col 
+                .col-md-8
+                    form(action="/nuevoHotel" method="POST" class="was-validated")
+                        .form-group 
+                            label(for="id_htl") ID del hotel
+                            input#id_htl(type="text", placeholder="Identificador" name="id_htl", class="form-control", value=id_htl ,readonly="readonly")
+                        .form-group 
+                            label(for="id_grt") Gerente del hotel
+                            select(name="id_grt", class="form-control")
+                                each info in hola
+                                    option(value=info.dato2) #{info.dato1} 
+                        .form-group 
+                            label(for="nombre") Nombre 
+                            input#nombre(type="text", placeholder="Nombre" name="nombre", required minlength = "2"
+                            ,class="form-control", value=nombre)
+                            .invalid-feedback Este campo no puede quedar vacío
+                            .valid-feedback Valid.
+                        .form-group 
+                            label(for="direccion") Direccion
+                            input#direccion(type="text", placeholder="Direccion" name="direccion", required minlength = "2"
+                            ,class="form-control", value=direccion)
+                            .invalid-feedback Este campo no puede quedar vacío
+                            .valid-feedback Valid.
+                        .form-group 
+                            label(for="telefono") Telefono
+                            input#telefono(type="tex", value=telefono, placeholder="Telefono" name="telefono", required minlength = "2",
+                            maxlength="12",onkeypress="return (event.charCode >= 48 && event.charCode <= 57)",class="form-control")
+                            .invalid-feedback Este campo no puede quedar vacío
+                            .valid-feedback Valid.
+                        .form-group 
+                            label(for="correo") Correo
+                            input#correo(type="email", placeholder="Correo" name="correo", required minlength = "2"
+                            ,class="form-control", value=correo)
+                            .invalid-feedback Este campo no puede quedar vacío
+                            .valid-feedback Valid.
+                        .form-group 
+                            label(for="imagen") Imagen 
+                            input#imagen(type="text", placeholder="Imagen" name="imagen", required
+                            ,class="form-control", value=imagen)
+                            .invalid-feedback Este campo no puede quedar vacío
+                            .valid-feedback Valid.
+                        
+                        
+                        center
+                            input.btn.btn-outline-success(type="submit")
